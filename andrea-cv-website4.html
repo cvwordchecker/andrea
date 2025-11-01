@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrea Kornijcukova - CV</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f4f4;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info {
+            margin-top: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .contact-info span {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        nav {
+            background: #2c3e50;
+            padding: 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.5rem;
+            transition: background 0.3s;
+        }
+
+        nav ul li a:hover {
+            background: #34495e;
+        }
+
+        section {
+            padding: 3rem 2rem;
+        }
+
+        section:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #667eea;
+        }
+
+        h3 {
+            color: #764ba2;
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .profile-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .expertise-item {
+            background: white;
+            padding: 1rem;
+            border-left: 4px solid #667eea;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+        }
+
+        .skill-tag {
+            background: #667eea;
+            color: white;
+            padding: 0.6rem 1rem;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .competency-list, .personal-skills-list {
+            display: grid;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .competency-item, .skill-item {
+            padding: 0.8rem;
+            background: white;
+            border-left: 3px solid #764ba2;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .job {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .job-header {
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .job-title {
+            color: #667eea;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .job-company {
+            color: #764ba2;
+            font-size: 1.1rem;
+            margin-top: 0.3rem;
+        }
+
+        .job-date {
+            color: #666;
+            font-style: italic;
+            margin-top: 0.3rem;
+        }
+
+        .job-duties {
+            margin-top: 1rem;
+        }
+
+        .job-duties ul {
+            list-style-position: inside;
+            margin-left: 1rem;
+        }
+
+        .job-duties li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .education-item {
+            background: white;
+            padding: 1.2rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #764ba2;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .cert-title {
+            font-weight: 600;
+            color: #667eea;
+            font-size: 1.1rem;
+        }
+
+        .cert-details {
+            color: #666;
+            margin-top: 0.3rem;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li a {
+                text-align: center;
+            }
+
+            section {
+                padding: 2rem 1rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 2rem 1rem;
+            }
+
+            header h1 {
+                font-size: 1.6rem;
+            }
+
+            .expertise-grid,
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Andrea Kornijcukova</h1>
+            <div class="contact-info">
+                <span>📍 London, Colindale, NW9</span>
+                <span>📱 07932850757</span>
+                <span>✉️ andreaand.ca@gmail.com</span>
+            </div>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#competencies">Competencies</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+            </ul>
+        </nav>
+
+        <section id="profile">
+            <h2>Personal Profile</h2>
+            <p class="profile-text">A hardworking professional who has a genuine desire to help children and people. Experienced in developing a level of care that is unique to every situation, and is greatly helped in doing this by the ability to quickly build up relationships with children and thereby gain a greater awareness of their practical and social needs.</p>
+            <p class="profile-text">Experienced in providing hands on support and delivery to vulnerable children by participating in the initial and on-going assessment of their needs. With an ability to successfully encourage them to be involved and independent as much as possible.</p>
+            <p class="profile-text">Comfortable working with children with physical, mental and learning disabilities, and their families. With a caring and friendly approach to work.</p>
+        </section>
+
+        <section id="expertise">
+            <h2>Areas of Expertise</h2>
+            <div class="expertise-grid">
+                <div class="expertise-item">Guiding and supporting individuals in their day-to-day activities</div>
+                <div class="expertise-item">Encouraging the development of personal skills through hobbies and interests</div>
+                <div class="expertise-item">Accompanying individuals to routine appointments</div>
+                <div class="expertise-item">Teaching essential life skills like budgeting, shopping, and managing bills</div>
+                <div class="expertise-item">Assisting with personal care and administering medication</div>
+                <div class="expertise-item">Contributing to household tasks such as cleaning and cooking</div>
+                <div class="expertise-item">Helping children to be independent and live a fulfilling life</div>
+                <div class="expertise-item">Supporting & encouraging development through hobbies and interests</div>
+                <div class="expertise-item">Teaching life skills such as budgeting, shopping and paying bills</div>
+            </div>
+            
+            <h3>Core Skills</h3>
+            <div class="skills-grid">
+                <div class="skill-tag">First Aid</div>
+                <div class="skill-tag">Client Hygiene</div>
+                <div class="skill-tag">Meal Preparation</div>
+                <div class="skill-tag">Healthcare</div>
+                <div class="skill-tag">Client Care</div>
+                <div class="skill-tag">COVID-19</div>
+                <div class="skill-tag">Safeguarding</div>
+                <div class="skill-tag">Medicine Administration</div>
+                <div class="skill-tag">Assessing Needs</div>
+                <div class="skill-tag">DBS Check</div>
+                <div class="skill-tag">Care Plans</div>
+            </div>
+        </section>
+
+        <section id="competencies">
+            <h2>Key Competencies</h2>
+            <div class="competency-list">
+                <div class="competency-item">Able to work with other social care professionals</div>
+                <div class="competency-item">Experience in care for elderly patients with dementia, diabetes, mobility, learning difficulties and end of life care</div>
+                <div class="competency-item">Providing confidentiality, dignity and privacy to patients at all times</div>
+                <div class="competency-item">Comprehensive understanding of residential, dementia and nursing care</div>
+                <div class="competency-item">Awareness of Health and Safety, infection control regulations, Equal Opportunities, Data Protection, Risk management and confidentiality</div>
+                <div class="competency-item">Ability to record patient observations accurately and report any issues of concern</div>
+                <div class="competency-item">Able to deliver one-to-one care using person centered approach</div>
+                <div class="competency-item">Can work with all kinds of people</div>
+                <div class="competency-item">Having a respectful approach to clients</div>
+                <div class="competency-item">Able to relate to people from a wide variety of cultural and social backgrounds</div>
+                <div class="competency-item">Calmly dealing with anxious or aggressive clients</div>
+                <div class="competency-item">Can think quickly & solve problems as they arrive</div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Personal Skills</h2>
+            <div class="personal-skills-list">
+                <div class="skill-item">Passionate about care and supporting those in need</div>
+                <div class="skill-item">Having a warm and engaging personality</div>
+                <div class="skill-item">Patient, attention to detail and listening skills</div>
+                <div class="skill-item">Able to maintain high standards with compassion and empathy</div>
+                <div class="skill-item">Always working to health and safety guidelines</div>
+                <div class="skill-item">Remaining calm under pressure</div>
+                <div class="skill-item">Have good stamina and both physical and emotional endurance</div>
+                <div class="skill-item">Excellent team working skills and the ability to use your own initiative</div>
+                <div class="skill-item">Tactful in sensitive situations</div>
+                <div class="skill-item">A friendly & caring approach to all areas of work</div>
+                <div class="skill-item">Hardworking, flexible and reliable</div>
+                <div class="skill-item">Willing to go extra mile</div>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <h2>Certifications & Qualifications</h2>
+            <div class="education-item">
+                <div class="cert-title">Lifeguard Certificate - National Pool Lifeguard Qualification (NPLQ) Gen 10</div>
+                <div class="cert-details">RLSS UK Qualifications Level 3 Award in Pool Lifeguarding</div>
+                <div class="cert-details">Royal Life Saving Society UK number 32300638</div>
+                <div class="cert-details">Internationally recognised qualification with CIMSPA Lifeguard Standard endorsement</div>
+                <div class="cert-details">Skills: Strong swimming, water rescues, first aid, CPR, emergency response, DBS certificate</div>
+            </div>
+            <div class="education-item">
+                <div class="cert-title">Emergency First Aid at Work Course</div>
+                <div class="cert-details">2023</div>
+            </div>
+            <div class="education-item">
+                <div class="cert-title">Assessing Needs Training Course</div>
+                <div class="cert-details">Social Care TV, November 2020</div>
+            </div>
+            <div class="education-item">
+                <div class="cert-title">COVID-19 Training Course</div>
+                <div class="cert-details">Social Care TV, November 2022</div>
+            </div>
+            <div class="education-item">
+                <div class="cert-title">Civil Service Course</div>
+                <div class="cert-details">Capital City College Finsbury Park, 3 March - 11 March 2025</div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Work Experience</h2>
+            
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">Care Worker / Support Worker</div>
+                    <div class="job-company">Norwood, Jewish Care, Edgware</div>
+                    <div class="job-date">2022 - Present</div>
+                </div>
+                <div class="job-duties">
+                    <h4>Key Responsibilities:</h4>
+                    <ul>
+                        <li><strong>Accommodation Management:</strong> Manage accommodation to meet assessed needs of vulnerable individuals, ensuring safety and security, reporting health and safety issues</li>
+                        <li><strong>Daily Living Support:</strong> Support and develop life skills including budgeting, cooking, cleaning, attendance at appointments, and registration with health professionals</li>
+                        <li><strong>Risk Assessment:</strong> Identify and manage risk through assessment techniques, appropriate intervention in complex cases and compliance with Child Protection procedures</li>
+                        <li><strong>Individual Development:</strong> Liaise with staff and social workers in delivering care plan objectives, provide weekly/monthly progress reports</li>
+                        <li><strong>Service Delivery:</strong> Participate in service developments including planning, control, monitoring, review, and evaluation activities</li>
+                        <li><strong>Communication & Reporting:</strong> Provide written and verbal reports, report all concerns related to young people</li>
+                        <li><strong>Budgeting:</strong> Monitor expenditure against budget provision for care/support</li>
+                        <li>Ensure fair treatment with consideration of cultural, religious, and physical needs following Equal Opportunities policy</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">Support Worker, Supported Living</div>
+                    <div class="job-company">Norwood</div>
+                    <div class="job-date">March 2022 - October 2024</div>
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">Career Support Worker (Casual)</div>
+                    <div class="job-company">Jewish Care</div>
+                    <div class="job-date">October 2024 - Present</div>
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">Lifeguard (Part Time)</div>
+                    <div class="job-date">February 2025 - Present</div>
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">Housekeeper, Cleaner, Carer</div>
+                    <div class="job-date">October 2019 - March 2022</div>
+                </div>
+                <div class="job-duties">
+                    <ul>
+                        <li>Assist vulnerable adults and special needs children in their own home</li>
+                        <li>Provide personal care and support for 37-year-old with Autism and Schizophrenia</li>
+                        <li>Undertake tasks detailed in Client's care and support plan</li>
+                        <li>Assist with getting up in the morning and going to bed at night</li>
+                        <li>Assist with toileting, continence management and personal hygiene</li>
+                        <li>Assist with medication administration</li>
+                        <li>Prepare food and drink, being aware of preferences, nutritional needs and cultural requirements</li>
+                        <li>Assist with shopping and meal preparation</li>
+                        <li>Provide light general household domestic duties, including housework and laundry</li>
+                        <li>Maintain good communication and develop effective working relationships with Clients</li>
+                        <li>Provide companionship, actively talking and listening about their interests</li>
+                        <li>Help maintain contact with family and friends</li>
+                        <li>Accompany to GP appointments and community trips</li>
+                        <li>Provide relief from pain and other distressing symptoms</li>
+                        <li>Integrate psychological and spiritual aspects of patient care</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">Volunteering Community Work (Maternity Leave)</div>
+                    <div class="job-date">2012 - 2019</div>
+                </div>
+                <div class="job-duties">
+                    <ul>
+                        <li>Responsible for safety, wellbeing, care, and development of young children</li>
+                        <li>Insert routine and consistency into the life of a young person</li>
+                        <li>Being a role model by setting a good example to children</li>
+                        <li>Support the daily routines of the family</li>
+                        <li>Maintain a safe environment by allowing only authorised people near children</li>
+                        <li>Create positive child care climate by preparing activities, avoiding conflict and nurturing self-esteem</li>
+                        <li>Plan and organise age-related activities</li>
+                        <li>Get children ready in the morning and take them to school</li>
+                        <li>Attend medical appointments or social events with children</li>
+                        <li>Help with after-school activities and homework</li>
+                        <li>Provide healthy meals and snacks for children</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">Mobile Hairdresser, Stylist, Barber</div>
+                    <div class="job-date">2010 - 2011</div>
+                </div>
+                <div class="job-duties">
+                    <ul>
+                        <li>Provide effective hair and beauty solutions to meet customer needs</li>
+                        <li>Tactfully advise clients on styles that suit their hair type & lifestyle</li>
+                        <li>Cut hair using clippers, scissors or razors</li>
+                        <li>Shave and trim beards and moustaches</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education & Qualifications</h2>
+            <div class="education-item">
+                <div class="cert-title">Academic Preparation of Hair and Beauty Cosmetics</div>
+                <div class="cert-details">Slovakia, 1997 - 1998 (A-Levels Equivalent)</div>
+            </div>
+            <div class="education-item">
+                <div class="cert-title">Secondary School of Hairdressing - Hair Stylist</div>
+                <div class="cert-details">Slovakia, 1994 - 1997 (GCSE Equivalent)</div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Andrea Kornijcukova. References available upon request.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add active class to navigation items on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
